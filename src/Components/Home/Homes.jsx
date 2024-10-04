@@ -6,9 +6,7 @@ import Footer from './Footer'
 const Homes = () => {
   return (
     <div>
-        
         <Hero/>
-      
     </div>
   )
 }

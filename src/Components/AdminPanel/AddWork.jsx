@@ -61,7 +61,7 @@ const AddWork = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/postart",
+        "http://13.233.51.183:3000/postart",
         formData,
         {
           headers: {
@@ -71,7 +71,6 @@ const AddWork = () => {
       );
       console.log("Form submitted successfully:", response.data);
       setSuccessMessage("Artwork submitted successfully!");
-      // Clear form fields after successful submission
       setArtName("");
       setArtType("");
       setArtSize("");
@@ -98,7 +97,6 @@ const AddWork = () => {
         <div className="flex-1 flex justify-center items-center my-16">
           <form className="w-full max-w-4xl" onSubmit={handleSubmit}>
             <div className="flex flex-wrap -mx-3 mb-6 gap-y-8">
-              {/* Writing Part */}
               <div className="w-full md:w-1/2 px-3 gap-y-8">
                 <div className="w-full px-3 mb-6 md:mb-0">
                   <label

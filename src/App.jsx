@@ -1,9 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from './Components/Home/Navbar';
 import Homes from './Components/Home/Homes';
 import Contact from './Components/Contact/Contact';
-import Footer from './Components/Home/Footer'
 import Collections from './Components/Work/Collections'
 import About from './Components/About/About';
 import AdminPanel from './Components/AdminPanel/AdminPanel';
@@ -18,7 +16,6 @@ const App = () => {
   return (
     <div>
   <BrowserRouter>
- 
   <Routes>
     <Route path='/' element={<Layout/>}>
     <Route path='/' element={<Homes/>}/>
@@ -26,8 +23,6 @@ const App = () => {
       <Route path='/about' element={<About/>}/>
      <Route path='/contact' element={<Contact/>}/>
      <Route path="/artwork/:id" element={<ArtworkPage />} />
-     
-
     </Route>
 
     <Route >
@@ -36,7 +31,6 @@ const App = () => {
     <Route path='/AddWork' element={<AddWork/>}/>
     <Route path='/Aboutme' element={<Aboutadmin/>}/>
     </Route>
- 
   </Routes>
   </BrowserRouter>
     </div>

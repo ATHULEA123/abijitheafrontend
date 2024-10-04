@@ -1,8 +1,8 @@
 // ConfirmationModal.js
-import React from 'react';
+import React from "react";
 
 const ConfirmationModal = ({ isOpen, onConfirm, onCancel }) => {
-  if (!isOpen) return null; 
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">

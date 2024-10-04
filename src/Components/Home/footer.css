@@ -1,0 +1,24 @@
+@keyframes fadeInLeftZoom {
+    0% {
+      opacity: 0;
+      transform: translateX(-30px) scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+  
+  .animate-logo {
+    animation: fadeInLeftZoom 1s ease-out forwards;
+    opacity: 0; 
+  }
+
+.logo {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .logo:hover {
+    transform: scale(1.2);
+  }
+  
