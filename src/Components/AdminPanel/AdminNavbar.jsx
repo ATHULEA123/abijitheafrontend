@@ -15,7 +15,7 @@ const AdminNavbar = () => {
             <ul className=' hidden md:flex gap-6'>
                 <li><a href="" className="text-white text-md font-medium hover:underline">HOME</a></li>
                 <li><a href="/AllWorks" className="text-white text-md font-medium hover:underline">All Works</a></li>
-                <li><a href="/Aboutme" className="text-white text-md font-medium hover:underline">About me</a></li>
+                <li><a href="/Aboutme" className="text-white text-md font-medium hover:underline">About Me</a></li>
 
               
             </ul>
@@ -31,6 +31,7 @@ const AdminNavbar = () => {
               <ul className='flex flex-col gap-2'>
                 <li><a href="" className="text-black text-sm  py-2 pl-6 ">HOME</a></li>
                 <li><a href="/AllWorks" className="text-black text-sm  py-2 pl-6 ">All Works</a></li>
+                <li><a href="/Aboutme" className="text-black text-sm  py-2 pl-6 ">About Me</a></li>
           
           
             </ul>

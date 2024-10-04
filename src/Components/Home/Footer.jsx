@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <div className='flex flex-col justify-center items-center my-12'>
         <h3 className='text-xl font-light mb-5 text-white'>LET'S CONNECT</h3>
-        <p className='text-sm font-light mb-3 text-white'>GET IN TOUCH FOR OPPORTUNITIES OR JUST TO SAY HI!👋</p>
+        <p className='text-sm font-light mb-3 text-white text-center'>I'm always  open to artworks, collaboration, commissions or just a chat about art!</p>
         <div className='flex'>
             <a href="tel:+917034349362"><img src={phone} alt="phone" className='w-12 h-12' /></a>
             <a href="https://www.instagram.com/abijith_e_a" target="_blank"><img src={insta} alt="insta" className='w-10 h-10 mt-1' /></a>
