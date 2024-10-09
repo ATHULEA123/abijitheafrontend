@@ -1,3 +1,4 @@
+
 import React, { useMemo, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -5,10 +6,10 @@ import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import Iframe from "react-iframe";
+import Iframe from 'react-iframe';
 
 const DebouncedIframe = ({ src, debounceTime = 300, ...props }) => {
-  const [iframeSrc, setIframeSrc] = useState(src);
+  const [iframeSrc, setIframeSrc] = useState(src); 
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -35,10 +36,7 @@ const ArtworkPage = React.memo(() => {
     return match ? `https://www.youtube.com/embed/${match[1]}` : url;
   };
 
-  const youtubeEmbedUrl = useMemo(
-    () => getYoutubeEmbedUrl(artwork.artvedio),
-    [artwork.artvedio]
-  );
+  const youtubeEmbedUrl = useMemo(() => getYoutubeEmbedUrl(artwork.artvedio), [artwork.artvedio]);
 
   return (
     <div className="container mx-auto px-8 py-0">
@@ -57,8 +55,7 @@ const ArtworkPage = React.memo(() => {
                 <img
                   src={image}
                   alt={`Artwork ${index + 1}`}
-                  className="w-full h-80 md:h-[calc(100vh-100px)] object-contain md:object-cover rounded-lg"
-                  loading="lazy"
+                  className="w-full h-64 sm:h-80 md:h-screen object-cover rounded-lg"
                 />
               </SwiperSlide>
             ))}
@@ -67,42 +64,26 @@ const ArtworkPage = React.memo(() => {
       </div>
       <div className="mt-8 flex flex-col md:flex-row gap-8">
         <div className="md:w-2/3 p-4 bg-gray-100 rounded-lg shadow-lg">
-          <h2 className="text-xl font-semibold mb-4">Description</h2>
+          <h2 className="text-xl font-semibold mb-4">Details</h2>
           <p className="text-gray-600">{artwork.description}</p>
         </div>
         <div className="md:w-1/3 p-6 bg-white rounded-lg shadow-lg">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6 border-b pb-2">
-            Art Details
+           Art
           </h2>
           <div className="text-gray-700 space-y-3">
-            <p>
-              <strong>Title:</strong> {artwork.artname}
-            </p>
-            <p>
-              <strong>Art Type:</strong> {artwork.arttype}
-            </p>
-            <p>
-              <strong>Art Size:</strong> {artwork.artsize}
-            </p>
-            <p>
-              <strong>Medium:</strong> {artwork.medium}
-            </p>
-            <p>
-              <strong>Year:</strong> {artwork.year}
-            </p>
-            <p>
-              <strong>Exhibition:</strong> {artwork.exhibition}
-            </p>
-            <p>
-              <strong>Location:</strong> {artwork.location}
-            </p>
+            <p><strong>Title:</strong> {artwork.artname}</p>
+            <p><strong>Art Type:</strong> {artwork.arttype}</p>
+            <p><strong>Art Size:</strong> {artwork.artsize}</p>
+            <p><strong>Medium:</strong> {artwork.medium}</p>
+            <p><strong>Year:</strong> {artwork.year}</p>
+            <p><strong>Exhibition:</strong> {artwork.exhibition}</p>
+            <p><strong>Location:</strong> {artwork.location}</p>
           </div>
         </div>
       </div>
       <div className="mt-4 mb-0 md:mt-9 md:mb-16 flex flex-col justify-center items-center ">
-        <h2 className=" font-medium mb-4 md:mb-9 text-white">
-          Watch the Artist in Action
-        </h2>
+        <h2 className=" font-medium mb-4 md:mb-9 text-white">Watch the Artist in Action</h2>
         <DebouncedIframe
           src={youtubeEmbedUrl}
           width="100%"
