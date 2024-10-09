@@ -252,7 +252,7 @@ const Aboutadmin = () => {
             )}
             {fileData.resume && (
               <div>
-                <h3 className="text-white">Portfolio Preview:</h3>
+                <h3 className="text-white">Resume Preview:</h3>
                 <a
                   href={URL.createObjectURL(fileData.resume)}
                   target="_blank"
@@ -265,7 +265,7 @@ const Aboutadmin = () => {
             )}
             {fileData.portfolio && (
               <div>
-                <h3 className="text-white"> Resume Preview:</h3>
+                <h3 className="text-white"> Portfolio Preview:</h3>
                 <a
                   href={URL.createObjectURL(fileData. portfolio)}
                   target="_blank"

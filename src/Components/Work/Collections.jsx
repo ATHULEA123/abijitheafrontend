@@ -11,6 +11,8 @@ const Collections = () => {
       try {
         const response = await fetch("http://13.233.51.183:3000/getallart");
         const data = await response.json();
+       
+        
         setArtworks(data);
       } catch (error) {
         console.error("Error fetching artworks:", error);
@@ -46,7 +48,7 @@ const Collections = () => {
         </select>
       </div>
       <div className="flex justify-between ">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-24 p-5 flex-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 p-5 flex-1 lg:gap-y-20 ">
           {filteredArtworks.length > 0 ? (
             filteredArtworks.map((artwork, index) => (
               <div

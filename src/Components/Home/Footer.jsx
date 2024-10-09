@@ -6,13 +6,13 @@ import email from "../../assets/email.png";
 import "./footer.css"
 const Footer = () => {
   return (
-    <div className="flex flex-col justify-center items-center my-12">
-  <h3 className="text-xl font-light mb-5 text-white">LET'S CONNECT</h3>
+    <div className="flex flex-col justify-center items-center my-5 md:my-0 lg:my-6 ">
+  <h3 className="text-xl font-light mb-3 text-white">LET'S CONNECT</h3>
   <p className="text-sm font-light mb-3 text-white text-center">
     I'm always open to artworks, collaboration, commissions or just a chat
     about art!
   </p>
-  <div className="flex space-x-4">
+  <div className="flex space-x-2">
     <a href="tel:+917034349362">
       <img src={phone} alt="phone" className="w-12 h-12 animate-logo logo" />
     </a>
