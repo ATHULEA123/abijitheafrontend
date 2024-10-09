@@ -64,12 +64,12 @@ const ArtworkPage = React.memo(() => {
       </div>
       <div className="mt-8 flex flex-col md:flex-row gap-8">
         <div className="md:w-2/3 p-4 bg-gray-100 rounded-lg shadow-lg">
-          <h2 className="text-xl font-semibold mb-4">Details</h2>
+          <h2 className="text-xl font-semibold mb-4">Description</h2>
           <p className="text-gray-600">{artwork.description}</p>
         </div>
         <div className="md:w-1/3 p-6 bg-white rounded-lg shadow-lg">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6 border-b pb-2">
-           Art
+           Art Details
           </h2>
           <div className="text-gray-700 space-y-3">
             <p><strong>Title:</strong> {artwork.artname}</p>
