@@ -1,0 +1,65 @@
+/* Styles for the slider container */
+.slider-container {
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  /* Style for Swiper images */
+  .slider-image {
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  /* For screens smaller than 768px (mobile and tablet) */
+  @media (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none !important; /* Hide arrows on mobile and tablet */
+    }
+  
+    .slider-image {
+      height: 200px; /* Adjust image height for smaller screens */
+    }
+  
+    .slider-container {
+      padding: 5px;
+    }
+  }
+  
+  /* For larger screens (above 768px) */
+  @media (min-width: 769px) {
+    .slider-image {
+      height: auto; /* Let the image fill the available space */
+    }
+  
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #333; /* Change the color of arrows */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .slider-container {
+      max-width: 75%;
+    }
+  
+    .slider-image {
+      height: 80vh; 
+    }
+  }
+  
+
+
+  .select-filter {
+    width: 100%; 
+  }
+  
+  @media (max-width: 400px) {
+    .select-filter {
+      width: 15px; 
+    }
+  }

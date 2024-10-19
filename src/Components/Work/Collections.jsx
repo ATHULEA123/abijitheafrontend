@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import "./slider.css"
 const Collections = () => {
   const [artworks, setArtworks] = useState([]);
   const [filter, setFilter] = useState("all"); 
@@ -37,7 +37,7 @@ const Collections = () => {
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="w-full p-2 border rounded text-black bg-gray-200 hover:bg-black hover:text-white focus:outline-none focus:bg-black focus:text-white transition duration-300"
+          className="select-filter  p-2 border rounded text-black bg-gray-200 hover:bg-black hover:text-white focus:outline-none focus:bg-black focus:text-white transition duration-300 "
         >
           <option value="all">All</option>
           <option value="painting">Painting</option>

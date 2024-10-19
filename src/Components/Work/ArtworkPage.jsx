@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Iframe from 'react-iframe';
+import "./slider.css"
 
 const DebouncedIframe = ({ src, debounceTime = 300, ...props }) => {
   const [iframeSrc, setIframeSrc] = useState(src); 
@@ -41,7 +42,7 @@ const ArtworkPage = React.memo(() => {
   return (
     <div className="container mx-auto px-8 py-0">
       <div className="flex justify-center">
-        <div className="w-full md:w-3/4">
+        <div className="slider-container  w-full md:w-3/4">
           <Swiper
             modules={[Pagination, Navigation]}
             spaceBetween={30}
