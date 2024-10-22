@@ -15,7 +15,7 @@ const AllWork = () => {
   useEffect(() => {
     const fetchArtworks = async () => {
       try {
-        const response = await fetch("http://13.233.51.183:3000/getallart");
+        const response = await fetch("http://localhost:3000/getallart");
         const data = await response.json();
         setArtworks(data);
       } catch (error) {
@@ -38,7 +38,7 @@ const AllWork = () => {
   const confirmDelete = async () => {
     try {
       const response = await fetch(
-        `http://13.233.51.183:3000/deleteart/${artworkToDelete}`,
+        `http://localhost:3000/deleteart/${artworkToDelete}`,
         {
           method: "DELETE",
         }

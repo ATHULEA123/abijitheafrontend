@@ -22,7 +22,7 @@ const DebouncedIframe = ({ src, debounceTime = 300, ...props }) => {
     };
   }, [src, debounceTime]);
 
-  return <Iframe url={iframeSrc} {...props} />; // Use iframeSrc for the Iframe URL
+  return <Iframe url={iframeSrc} {...props} />;
 };
 
 const ArtworkPage = React.memo(() => {

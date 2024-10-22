@@ -4,21 +4,18 @@ import "./slider.css"
 const Collections = () => {
   const [artworks, setArtworks] = useState([]);
   const [filter, setFilter] = useState("all"); 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchArtworks = async () => {
       try {
-        const response = await fetch("http://13.233.51.183:3000/getallart");
+        const response = await fetch("http://localhost:3000/getallart");
         const data = await response.json();
-       
-        
         setArtworks(data);
       } catch (error) {
         console.error("Error fetching artworks:", error);
       }
     };
-
     fetchArtworks();
   }, []);
 
@@ -37,8 +34,7 @@ const Collections = () => {
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="select-filter  p-2 border rounded text-black bg-gray-200 hover:bg-black hover:text-white focus:outline-none focus:bg-black focus:text-white transition duration-300 "
-        >
+          className="select-filter  p-2 border rounded text-black bg-gray-200 hover:bg-black hover:text-white focus:outline-none focus:bg-black focus:text-white transition duration-300 " >
           <option value="all">All</option>
           <option value="painting">Painting</option>
           <option value="sculpture">Sculpture</option>
@@ -76,5 +72,4 @@ const Collections = () => {
     </>
   );
 };
-
 export default Collections;

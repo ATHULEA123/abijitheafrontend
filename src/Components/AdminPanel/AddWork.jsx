@@ -61,7 +61,7 @@ const AddWork = () => {
 
     try {
       const response = await axios.post(
-        "http://13.233.51.183:3000/postart",
+        "http://localhost:3000/postart",
         formData,
         {
           headers: {

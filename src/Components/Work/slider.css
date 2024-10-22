@@ -7,14 +7,11 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     background-color: #f9f9f9;
   }
-  
-  /* Style for Swiper images */
   .slider-image {
     border-radius: 10px;
     object-fit: cover;
   }
   
-  /* For screens smaller than 768px (mobile and tablet) */
   @media (max-width: 768px) {
     .swiper-button-next,
     .swiper-button-prev {
