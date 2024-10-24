@@ -61,7 +61,7 @@ const AddWork = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/postart",
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/postart`, 
         formData,
         {
           headers: {
@@ -69,6 +69,7 @@ const AddWork = () => {
           },
         }
       );
+    
       console.log("Form submitted successfully:", response.data);
       setSuccessMessage("Artwork submitted successfully!");
       setArtName("");

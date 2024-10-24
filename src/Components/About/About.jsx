@@ -12,7 +12,7 @@ const About = () => {
   useEffect(() => {
     const fetchArtistData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/art/artist");
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_BASE_URL}/art/artist`);
         setArtistData(response.data);
       } catch (error) {
         console.error("Error fetching artist data:", error);
@@ -29,7 +29,7 @@ const About = () => {
         <div className="text-center flex-shrink-0">
           {artistData.artimage && (
             <img
-             src={`http://localhost:3000/Uploads/${artistData.artimage}`}
+            src={`${import.meta.env.VITE_BACKEND_BASE_URL}/Uploads/${artistData.artimage}`}
               className="w-40 h-40 md:w-72 md:h-72 lg:w-96 lg:h-96 mx-auto rounded-xl object-cover"
               alt="Artist"
             />
@@ -42,7 +42,7 @@ const About = () => {
       <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-10">
         <button className="mt-6 py-2 px-4 border border-white rounded-full text-white flex items-center justify-center hover:text-black transition-colors">
           <a
-            href={`http://localhost:3000/Uploads/${artistData.portfolio}`}
+            href={`${import.meta.env.VITE_BACKEND_BASE_URL}/Uploads/${artistData.portfolio}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-white mr-2"
@@ -53,7 +53,7 @@ const About = () => {
         </button>
         <button className="mt-6 py-2 px-4 border border-white rounded-full text-white flex items-center justify-center bg-white hover:text-black transition-colors">
           <a
-            href={`http://localhost:3000/Uploads/${artistData.resume}`}
+            href={`${import.meta.env.VITE_BACKEND_BASE_URL}/Uploads/${artistData.resume}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-black mr-2"

@@ -9,7 +9,7 @@ const Collections = () => {
   useEffect(() => {
     const fetchArtworks = async () => {
       try {
-        const response = await fetch("http://localhost:3000/getallart");
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_BASE_URL}/getallart`);
         const data = await response.json();
         setArtworks(data);
       } catch (error) {
