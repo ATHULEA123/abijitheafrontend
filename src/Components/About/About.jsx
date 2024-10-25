@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import downloadicon from "../../assets/downloadicon.png";
 import downloadwhite from "../../assets/downloadwhite.png";
+
 const About = () => {
   const [artistData, setArtistData] = useState({
     artimage: "",
@@ -9,17 +10,27 @@ const About = () => {
     resume: "",
     portfolio: "",
   });
+
   useEffect(() => {
+    let didFetchData = false;
+
     const fetchArtistData = async () => {
-      try {
-        const response = await axios.get(`${import.meta.env.VITE_BACKEND_BASE_URL}/art/artist`);
-        setArtistData(response.data);
-      } catch (error) {
-        console.error("Error fetching artist data:", error);
+      if (!didFetchData) {
+        try {
+          const response = await axios.get(`${import.meta.env.VITE_BACKEND_BASE_URL}/art/artist`);
+          setArtistData(response.data);
+         
+          
+          didFetchData = true;
+        } catch (error) {
+          console.error("Error fetching artist data:", error);
+        }
       }
     };
+
     fetchArtistData();
-  }, []);
+  }, []); // Ensure no dependencies for a single run
+
   return (
     <div className="px-4 md:px-8 lg:px-16">
       <h1 className="text-white my-10 text-center text-4xl font-bold">
@@ -29,7 +40,7 @@ const About = () => {
         <div className="text-center flex-shrink-0">
           {artistData.artimage && (
             <img
-            src={`${import.meta.env.VITE_BACKEND_BASE_URL}/Uploads/${artistData.artimage}`}
+              src={`${import.meta.env.VITE_BACKEND_BASE_URL}/Uploads/${artistData.artimage}`}
               className="w-40 h-40 md:w-72 md:h-72 lg:w-96 lg:h-96 mx-auto rounded-xl object-cover"
               alt="Artist"
             />
@@ -66,4 +77,5 @@ const About = () => {
     </div>
   );
 };
+
 export default About;
