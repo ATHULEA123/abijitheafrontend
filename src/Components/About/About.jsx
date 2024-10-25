@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,useRef} from "react";
 import axios from "axios";
 import downloadicon from "../../assets/downloadicon.png";
 import downloadwhite from "../../assets/downloadwhite.png";
@@ -11,25 +11,32 @@ const About = () => {
     portfolio: "",
   });
 
-  useEffect(() => {
-    let didFetchData = false;
-
-    const fetchArtistData = async () => {
-      if (!didFetchData) {
-        try {
-          const response = await axios.get(`${import.meta.env.VITE_BACKEND_BASE_URL}/art/artist`);
-          setArtistData(response.data);
-         
-          
-          didFetchData = true;
-        } catch (error) {
-          console.error("Error fetching artist data:", error);
-        }
-      }
+  const firstRequest = useRef(true);
+  const debounce = (func, delay) => {
+    let timeoutId;
+    return (...args) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => func(...args), delay);
     };
+  };
+  const fetchArtistData = async () => {
+    try {
+      if (firstRequest.current) {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_BASE_URL}/art/artist`);
+        setArtistData(response.data);
+        firstRequest.current = false;
+      }
+      
+    } catch (error) {
+      console.error("Error fetching artist data:");
+    }
+  };
 
-    fetchArtistData();
-  }, []); // Ensure no dependencies for a single run
+  const debouncedFetchArtistData = debounce(fetchArtistData, 300);
+
+  useEffect(() => {
+    debouncedFetchArtistData(); 
+  }, []);
 
   return (
     <div className="px-4 md:px-8 lg:px-16">
