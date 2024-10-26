@@ -30,14 +30,12 @@ const ArtworkPage = React.memo(() => {
   const artwork = location.state.artwork;
   const images = artwork.artimage;
 
-  const getYoutubeEmbedUrl = (url) => {
+  const youtubeEmbedUrl = useMemo(() => {
     const youtubeRegex =
       /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
-    const match = url.match(youtubeRegex);
-    return match ? `https://www.youtube.com/embed/${match[1]}` : url;
-  };
-
-  const youtubeEmbedUrl = useMemo(() => getYoutubeEmbedUrl(artwork.artvedio), [artwork.artvedio]);
+    const match = artwork.artvedio.match(youtubeRegex);
+    return match ? `https://www.youtube.com/embed/${match[1]}` : artwork.artvedio;
+  }, [artwork.artvedio]);
 
   return (
     <div className="container mx-auto px-8 py-0">
@@ -65,7 +63,7 @@ const ArtworkPage = React.memo(() => {
       </div>
       <div className="mt-8 flex flex-col md:flex-row gap-8">
         <div className="md:w-2/3 p-4 bg-gray-100 rounded-lg shadow-lg">
-          <h2 className="text-xl font-semibold mb-4">Description</h2>
+          <h2 className="text-xl font-bold mb-4">Description</h2>
           <p className="text-gray-600">{artwork.description}</p>
         </div>
         <div className="md:w-1/3 p-6 bg-white rounded-lg shadow-lg">
@@ -100,3 +98,4 @@ const ArtworkPage = React.memo(() => {
 });
 
 export default ArtworkPage;
+

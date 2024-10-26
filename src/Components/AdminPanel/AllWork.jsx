@@ -74,20 +74,20 @@ const AllWork = () => {
       <AdminNavbar />
       <div className="flex mx-5">
         {/* Filter Section */}
-        <div className="w-1/4 p-5 rounded-lg shadow-md mr-5">
-          <select
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-            className="w-full p-2 border border-gray-400 rounded"
-          >
-            <option value="all">All</option>
-            <option value="painting">Painting</option>
-            <option value="sculpture">Sculpture</option>
-            <option value="installation">Installation</option>
-            <option value="sketches">Sketches</option>
-            <option value="publicart">Public Art</option>
-          </select>
-        </div>
+        <div className="  md:w-1/6 p-5 rounded-lg shadow-md hover:bg-black hover:text-white transition duration-300 animate-fade-in">
+        <select
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+          className="select-filter w-1/4 sm:w-full  p-2 border rounded text-black bg-gray-200 hover:bg-black hover:text-white focus:outline-none focus:bg-black focus:text-white transition duration-300 " >
+          <option value="all">All</option>
+          <option value="installation">Installation</option>
+          <option value="painting">Painting</option>
+          <option value="public art">Public Art</option>
+          <option value="sculpture">Sculpture</option>
+          <option value="sketches">Sketches</option>
+          <option value="Studio Space">Studio Space</option>
+        </select>
+      </div>
 
         {/* Add Work Button */}
         <div className="flex items-center justify-end w-full">

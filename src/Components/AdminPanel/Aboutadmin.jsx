@@ -46,8 +46,10 @@ const Aboutadmin = () => {
     setLoading(true);
     try {
       await axios.delete(`${import.meta.env.VITE_BACKEND_BASE_URL}/art/artist`);
-      setArtistData({ artimage: "", about: "", resume: "No resume", portfolio: "No Portfolio" });
+      setArtistData({ artimage: "", about: "", resume: "", portfolio: "" });
+
       setShowDeletePopup(false);
+     
       alert("Artist data deleted successfully!");
     } catch (error) {
       console.error("Error deleting artist data:", error);
@@ -158,6 +160,7 @@ const Aboutadmin = () => {
           <AddArtistForm
             setShowAddPopup={setShowAddPopup}
             setArtistData={setArtistData}
+             fetchArtistData={fetchArtistData}
           />
         </div>
       )}

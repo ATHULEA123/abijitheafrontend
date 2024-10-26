@@ -122,14 +122,20 @@ const AddWork = () => {
                   >
                     Art Type
                   </label>
-                  <input
-                    className="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    id="grid-art-type"
-                    type="text"
-                    placeholder="Type"
-                    value={artType}
-                    onChange={(e) => setArtType(e.target.value)}
-                  />
+                  <select
+    className="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+    id="grid-art-type"
+    value={artType}
+    onChange={(e) => setArtType(e.target.value)}
+  >
+    <option value="" disabled>Select Art Type</option>
+    <option value="Installation">Installation</option>
+    <option value="Painting">Painting</option>
+    <option value="Public Art">Public Art</option>
+    <option value="Sculpture">Sculpture</option>
+    <option value="Sketches">Sketches</option>
+    <option value="Studio Space">Studio Space</option>
+  </select>
                 </div>
                 <div className="w-full px-3 mb-6 md:mb-0">
                   <label
@@ -209,7 +215,7 @@ const AddWork = () => {
                     value={exhibition}
                     onChange={(e) => setExhibition(e.target.value)}
                   />
-                  {/* artvediolink */}
+                 
                   <label
                     className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
                     htmlFor="grid-videolink"
