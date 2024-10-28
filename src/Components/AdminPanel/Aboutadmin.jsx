@@ -1,4 +1,4 @@
-import React, { useState, useEffect ,useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import downloadicon from "../../assets/downloadicon.png";
 import downloadwhite from "../../assets/downloadwhite.png";
@@ -15,13 +15,7 @@ const Aboutadmin = () => {
   const [showAddPopup, setShowAddPopup] = useState(false);
   const [loading, setLoading] = useState(false);
   const firstRequest = useRef(true);
-  const debounce = (func, delay) => {
-    let timeoutId;
-    return (...args) => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => func(...args), delay);
-    };
-  };
+
   const fetchArtistData = async () => {
     try {
       if (firstRequest.current) {
@@ -29,27 +23,21 @@ const Aboutadmin = () => {
         setArtistData(response.data);
         firstRequest.current = false;
       }
-      
     } catch (error) {
-      console.error("Error fetching artist data:");
+      console.error("Error fetching artist data:", error);
     }
   };
 
-  const debouncedFetchArtistData = debounce(fetchArtistData, 300);
-
   useEffect(() => {
-    debouncedFetchArtistData(); 
+    fetchArtistData();
   }, []);
-
 
   const handleDelete = async () => {
     setLoading(true);
     try {
       await axios.delete(`${import.meta.env.VITE_BACKEND_BASE_URL}/art/artist`);
       setArtistData({ artimage: "", about: "", resume: "", portfolio: "" });
-
       setShowDeletePopup(false);
-     
       alert("Artist data deleted successfully!");
     } catch (error) {
       console.error("Error deleting artist data:", error);
@@ -63,7 +51,7 @@ const Aboutadmin = () => {
     if (artistData.artimage || artistData.about || artistData.resume || artistData.portfolio) {
       alert("Already have artist data.");
     } else {
-      setShowAddPopup(true); 
+      setShowAddPopup(true);
     }
   };
 
@@ -122,7 +110,6 @@ const Aboutadmin = () => {
               Delete
             </button>
           )}
-        
           <button
             className="py-2 px-4 bg-green-500 text-white rounded-full"
             onClick={handleAddArtist}
@@ -160,7 +147,7 @@ const Aboutadmin = () => {
           <AddArtistForm
             setShowAddPopup={setShowAddPopup}
             setArtistData={setArtistData}
-             fetchArtistData={fetchArtistData}
+            fetchArtistData={fetchArtistData}
           />
         </div>
       )}
@@ -169,4 +156,3 @@ const Aboutadmin = () => {
 };
 
 export default Aboutadmin;
-

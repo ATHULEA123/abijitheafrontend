@@ -14,7 +14,7 @@ const AdminNavbar = () => {
           <ul className=" hidden md:flex gap-6">
             <li>
               <a
-                href="/AdminPanel"
+                href="/AdminPanel/abijithea/3/10/1997"
                 className="text-white text-md font-medium hover:underline"
               >
                 HOME
