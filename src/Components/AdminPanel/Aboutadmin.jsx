@@ -173,16 +173,16 @@ const Aboutadmin = () => {
   const [showAddPopup, setShowAddPopup] = useState(false);
   const [loading, setLoading] = useState(false);
   const firstRequest = useRef(true);
-  const [hasData, setHasData] = useState(false); // New state to track if artist data exists
+  const [hasData, setHasData] = useState(false); 
 
   const fetchArtistData = async () => {
     try {
       const response = await axios.get(`${import.meta.env.VITE_BACKEND_BASE_URL}/art/artist`);
       if (response.data) {
         setArtistData(response.data);
-        setHasData(true); // Set hasData to true if data is fetched
+        setHasData(true); 
       } else {
-        setHasData(false); // No data found
+        setHasData(false); 
       }
       firstRequest.current = false;
     } catch (error) {
@@ -203,7 +203,7 @@ const Aboutadmin = () => {
       setArtistData({ artimage: "", about: "", resume: "", portfolio: "" });
       setShowDeletePopup(false);
       alert("Artist data deleted successfully!");
-      setHasData(false); // Reset hasData since artist data is deleted
+      setHasData(false); 
     } catch (error) {
       console.error("Error deleting artist data:", error);
       alert("Failed to delete artist data.");
