@@ -89,7 +89,6 @@ const AllWork = () => {
         </select>
       </div>
 
-        {/* Add Work Button */}
         <div className="flex items-center justify-end w-full">
           <button className="mt-6 py-2 px-4 border border-white rounded-full text-white flex items-center justify-center hover:bg-white hover:text-black transition-colors">
             <a href="/AddWork">Add Work</a>

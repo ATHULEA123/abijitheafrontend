@@ -1,26 +1,4 @@
-// import React from "react";
 
-// const AdminPanel = () => {
-//   return (
-//     <>
-//       
-//       <div className="relative h-screen flex items-center justify-center overflow-hidden">
-//         <div
-//           className="absolute inset-0 bg-cover bg-no-repeat filter blur-sm"
-//           style={{ backgroundImage: "url('/background.png')" }}
-//         ></div>
-//         <div className="relative z-10 text-center text-white">
-//           <h1 className="text-5xl md:text-7xl font-light animate-slide-up">
-//             WELCOME
-//           </h1>
-//           <p className="text-lg mt-4">Abijith E A</p>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default AdminPanel;
 import React, { useState, useEffect } from "react";
 import axios from "axios";
  import AdminNavbar from "./AdminNavbar";
@@ -36,7 +14,6 @@ const AdminPanel = () => {
   const [success, setSuccess] = useState(null);
   const [error, setError] = useState(null);
 
-  // Function to fetch background media
   const fetchBackgroundMedia = async () => {
     try {
       const response = await axios.get("http://localhost:3000/api/upload-background");
@@ -49,17 +26,14 @@ const AdminPanel = () => {
     }
   };
 
-  // Fetch background media on component mount
   useEffect(() => {
     fetchBackgroundMedia();
   }, []);
 
-  // Function to handle file change
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
   };
 
-  // Function to handle file upload (PUT request)
   const handleUpload = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -76,7 +50,7 @@ const AdminPanel = () => {
         },
       });
       setSuccess(response.data.success);
-      fetchBackgroundMedia(); // Refresh background after upload
+      fetchBackgroundMedia();
     } catch (error) {
       setError("Error uploading the file.");
       console.error(error);
@@ -90,7 +64,7 @@ const AdminPanel = () => {
     <>
     <AdminNavbar/>
     <div className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background media handling */}
+    
       {fileType === "video" && backgroundUrl ? (
         <video
           className="absolute inset-0 object-cover w-full h-full filter blur-sm"
