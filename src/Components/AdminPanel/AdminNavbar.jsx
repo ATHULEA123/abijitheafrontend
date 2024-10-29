@@ -12,7 +12,7 @@ const AdminNavbar = ({isDarkMode}) => {
           <h1 className="text-xl font-bold {`${isDarkMode ? 'text-black':'text-white'} ">ABIJITH</h1>
         </div>
         <div className="flex">
-          <ul className=" hidden md:flex gap-6">
+          <ul className=" hidden lg:flex gap-6">
             <li>
               <a
                 href="/AdminPanel/abijithea/3/10/1997"
@@ -42,7 +42,7 @@ const AdminNavbar = ({isDarkMode}) => {
   onClick={() => {
     setIsVisible(true);
   }}
-  className="sm:hidden absolute right-5 top-5"
+  className="lg:hidden absolute right-10 top-7"
   aria-label="Open Menu"
 >
   <FaBars

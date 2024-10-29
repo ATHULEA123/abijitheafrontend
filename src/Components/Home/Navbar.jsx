@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import listicon from "../../assets/listicon.png";
 import returnarrow from "../../assets/returnarrow.png";
 import { FaBars } from 'react-icons/fa';
 const Navbar = ({isDarkMode}) => {
@@ -10,8 +9,8 @@ const Navbar = ({isDarkMode}) => {
       <div className="flex items-center gap-4">
         <h1 className={`text-xl font-bold${isDarkMode ? 'text-black':'text-white'  }`}>ABIJITH EA</h1>
       </div>
-      <div className="flex">
-        <ul className=" hidden md:flex gap-6">
+      <div className="flex me-10">
+        <ul className=" hidden lg:flex gap-6">
           <li>
             <a
               href="/"
@@ -49,7 +48,7 @@ const Navbar = ({isDarkMode}) => {
   onClick={() => {
     setIsVisible(true);
   }}
-  className="sm:hidden absolute right-5 top-5"
+  className="lg:hidden absolute right-10 top-7 "
   aria-label="Open Menu"
 >
   <FaBars

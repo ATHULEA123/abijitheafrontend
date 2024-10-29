@@ -13,4 +13,4 @@ const Layout = ({isDarkMode}) => {
   )
 }
 
-export default Layout
+export default Layout;

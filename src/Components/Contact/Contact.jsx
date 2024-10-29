@@ -102,7 +102,7 @@ const Contact = ({ isDarkMode }) => {
             )}
           </form>
         </div>
-        <div className={`flex-1 flex w-full flex-col items-flex-start lg:w-1/2 text-center lg:text-left ${isDarkMode ? 'text-black':'text-white'  } mt-12 lg:mt-0`}>
+        <div className="flex-1 flex w-full flex-col items-flex-start lg:w-1/2 text-center lg:text-left ${isDarkMode ? 'text-black':'text-white'  } mt-12 lg:mt-0">
           <div>
             <h4 className="text-3xl mb-4 font-serif">Abijith E A</h4>
             <p className="text-lg mb-2">
@@ -111,7 +111,7 @@ const Contact = ({ isDarkMode }) => {
                 href="tel:+917034349362"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${isDarkMode ? 'text-black':'text-white'  } underline font-mono font-semibold text-sm hover:bg-blue-500`}
+                className="${isDarkMode ? 'text-black':'text-white'  } underline font-mono font-semibold text-sm hover:bg-blue-500"
               >
                 +917034349362
               </a>
@@ -122,7 +122,7 @@ const Contact = ({ isDarkMode }) => {
                 href="mailto:eaabijith3@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${isDarkMode ? 'text-black':'text-white'} underline font-mono font-semibold text-sm hover:bg-blue-500`}
+                className="${isDarkMode ? 'text-black':'text-white'} underline font-mono font-semibold text-sm hover:bg-blue-500"
               >
                 eaabijith3@gmail.com
               </a>

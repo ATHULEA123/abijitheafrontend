@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body{
-  background-color: rgb(16, 16, 16);
-  font-family: "Montserrat", system-ui;
-  
-} */
 h1,h2,h3,h4,h5,h6,p{
   margin: 0;
 }
@@ -25,15 +20,15 @@ h1,h2,h3,h4,h5,h6,p{
   100% { transform: rotate(360deg); }
 }
 :root {
-  --background-color: #FFFFFF;
-  --text-color: #333333;
-  --button-border-color: #333333;
+  --background-color: black;
+  --text-color: white;
+  --button-border-color: white;
 }
 /* Dark Mode */
 [data-theme="dark"] {
-  --background-color: #333333;
-  --text-color: #FFFFFF;
-  --button-border-color: #FFFFFF;
+  --background-color: white;
+  --text-color: black;
+  --button-border-color: black;
 }
 body {
   background-color: var(--background-color);

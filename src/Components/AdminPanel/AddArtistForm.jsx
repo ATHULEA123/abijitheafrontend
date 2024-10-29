@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const AddArtistForm = ({ setShowAddPopup, setArtistData,fetchArtistData ,isDarkMode}) => {
+const AddArtistForm = ({ setShowAddPopup, setArtistData,fetchArtistData }) => {
   const [formData, setFormData] = useState({
     artimage: null,
     about: "",
@@ -40,29 +40,29 @@ const AddArtistForm = ({ setShowAddPopup, setArtistData,fetchArtistData ,isDarkM
   };
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
-      <h2 className="text-lg font-semibold mb-4">Add Artist Data</h2>
-      <label className="block mb-2 font-semibold">Add Image:</label>
+      <h2 className="text-lg font-semibold mb-4 text-black">Add Artist Data</h2>
+      <label className="block mb-2 font-semibold text-black">Add Image:</label>
       <input
         type="file"
         name="artimage"
         onChange={handleChange}
         className="mb-4"
       />
-      <label className="block mb-2 font-semibold">Description:</label>
+      <label className="block mb-2 font-semibold text-black">Description:</label>
       <textarea
         name="about"
         placeholder="Description"
         onChange={handleChange}
         className="mb-4 w-full p-2 border rounded"
       />
-      <label className="block mb-2 font-semibold">Add Resume:</label>
+      <label className="block mb-2 font-semibold text-black ">Add Resume:</label>
       <input
         type="file"
         name="resume"
         onChange={handleChange}
         className="mb-4"
       />
-      <label className="block mb-2 font-semibold">Add Portfolio:</label>
+      <label className="block mb-2 font-semibold text-black">Add Portfolio:</label>
       <input
         type="file"
         name="portfolio"
