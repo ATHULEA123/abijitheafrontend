@@ -25,7 +25,7 @@ const DebouncedIframe = ({ src, debounceTime = 300, ...props }) => {
   return <Iframe url={iframeSrc} {...props} />;
 };
 
-const ArtworkPage = React.memo(() => {
+const ArtworkPage = React.memo(({isDarkMode}) => {
   const location = useLocation();
   const artwork = location.state.artwork;
   const images = artwork.artimage;
@@ -82,7 +82,7 @@ const ArtworkPage = React.memo(() => {
         </div>
       </div>
       <div className="mt-4 mb-0 md:mt-9 md:mb-16 flex flex-col justify-center items-center ">
-        <h2 className=" font-medium mb-4 md:mb-9 text-white">Watch the Artist in Action</h2>
+        <h2 className=" font-medium mb-4 md:mb-9  ${isDarkMode ? 'text-black':'text-white'}  ">Watch the Artist in Action</h2>
         <DebouncedIframe
           src={youtubeEmbedUrl}
           width="100%"

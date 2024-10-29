@@ -6,7 +6,7 @@ const ConfirmationModal = ({ isOpen, onConfirm, onCancel }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white rounded-lg p-5">
+      <div className="{`${isDarkMode ? 'bg-black':'bg-white'} rounded-lg p-5">
         <h2 className="text-lg font-bold">Confirm Delete</h2>
         <p>Are you sure you want to delete this artwork?</p>
         <div className="mt-4 flex justify-end">
@@ -18,7 +18,7 @@ const ConfirmationModal = ({ isOpen, onConfirm, onCancel }) => {
           </button>
           <button
             onClick={onConfirm}
-            className="px-4 py-2 bg-red-500 text-white rounded"
+            className="px-4 py-2 bg-red-500 {`${isDarkMode ? 'text-black':'text-white'}  rounded"
           >
             Yes, Delete
           </button>

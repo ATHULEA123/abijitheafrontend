@@ -3,7 +3,7 @@ import axios from "axios";
 import downloadicon from "../../assets/downloadicon.png";
 import downloadwhite from "../../assets/downloadwhite.png";
 
-const About = () => {
+const About = ({isDarkMode}) => {
   const [artistData, setArtistData] = useState({
     artimage: "",
     about: "",
@@ -40,7 +40,7 @@ const About = () => {
 
   return (
     <div className="px-4 md:px-8 lg:px-16">
-      <h1 className="text-white my-10 text-center text-4xl font-bold">
+      <h1 className={`${isDarkMode ? 'text-black':'text-white'}  my-10 text-center text-4xl font-bold`}>
         ABIJITH E A
       </h1>
       <div className="flex flex-col md:flex-row gap-10 justify-center">
@@ -54,22 +54,22 @@ const About = () => {
           )}
         </div>
         <div className="max-w-2xl flex-grow">
-          <p className="text-white">{artistData.about}</p>
+          <p className={`${isDarkMode ? 'text-black':'text-white'} `}>{artistData.about}</p>
         </div>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-10">
-        <button className="mt-6 py-2 px-4 border border-white rounded-full text-white flex items-center justify-center hover:text-black transition-colors">
+        <button className={`mt-6 py-2 px-4 border ${isDarkMode ? 'border-black':'border-white'}  rounded-full ${isDarkMode ? 'text-black':'text-white'}  flex items-center justify-center hover:text-black transition-colors`}>
           <a
             href={`${import.meta.env.VITE_BACKEND_BASE_URL}/Uploads/${artistData.portfolio}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white mr-2"
+            className={`${isDarkMode ? 'text-black':'text-white'}  mr-2`}
           >
             Portfolio
           </a>
           <img src={downloadwhite} alt="Right arrow" className="w-6" />
         </button>
-        <button className="mt-6 py-2 px-4 border border-white rounded-full text-white flex items-center justify-center bg-white hover:text-black transition-colors">
+        <button className={`mt-6 py-2 px-4 border ${isDarkMode ? 'border-black':'border-white'} rounded-full flex items-center justify-center bg-white hover:text-black transition-colors`}>
           <a
             href={`${import.meta.env.VITE_BACKEND_BASE_URL}/Uploads/${artistData.resume}`}
             target="_blank"

@@ -5,7 +5,7 @@ import Hero from './Hero'
 const Homes = () => {
   return (
     <div>
-        <Hero/>
+        <Hero />
     </div>
   )
 }

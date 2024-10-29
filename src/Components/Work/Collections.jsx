@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./slider.css"
-const Collections = () => {
+const Collections = ({isDarkMode}) => {
   const [artworks, setArtworks] = useState([]);
   const [filter, setFilter] = useState("all"); 
   const navigate = useNavigate();
@@ -63,13 +63,13 @@ const Collections = () => {
                   alt={artwork.artname}
                 />
                 <div className="text-content">
-                <p className="text-white py-2 text-xl font-bold font-serif md:text-2xl" >{artwork.artname}</p>
-                <p className="text-white font-serif text-lg md:text-lg">{artwork.arttype}</p>
+                <p className=" ${isDarkMode ? 'text-black':'text-white'}   py-2 text-xl font-bold font-serif md:text-2xl" >{artwork.artname}</p>
+                <p className=" ${isDarkMode ? 'text-black':'text-white'}   font-serif text-lg md:text-lg">{artwork.arttype}</p>
                 </div>
               </div>
             ))
           ) : (
-            <p className="text-white animate-fade-in">No artworks available</p>
+            <p className=" ${isDarkMode ? 'text-black':'text-white'}   animate-fade-in">No artworks available</p>
           )}
         </div>
       </div>

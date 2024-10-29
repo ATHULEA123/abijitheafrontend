@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const AddArtistForm = ({ setShowAddPopup, setArtistData,fetchArtistData }) => {
+const AddArtistForm = ({ setShowAddPopup, setArtistData,fetchArtistData ,isDarkMode}) => {
   const [formData, setFormData] = useState({
     artimage: null,
     about: "",

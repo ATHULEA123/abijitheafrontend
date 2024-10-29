@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import listicon from "../../assets/listicon.png";
 import returnarrow from "../../assets/returnarrow.png";
-
-const AdminNavbar = () => {
+import { FaBars } from 'react-icons/fa';
+const AdminNavbar = ({isDarkMode}) => {
   const [isVisible, setIsVisible] = useState(false);
+  
   return (
     <div>
       <div className="flex justify-between items-center py-6 px-8">
         <div className="flex items-center gap-4">
-          <h1 className="text-xl font-bold text-white">ABIJITH</h1>
+          <h1 className="text-xl font-bold {`${isDarkMode ? 'text-black':'text-white'} ">ABIJITH</h1>
         </div>
         <div className="flex">
           <ul className=" hidden md:flex gap-6">
             <li>
               <a
                 href="/AdminPanel/abijithea/3/10/1997"
-                className="text-white text-md font-medium hover:underline"
+                className="{`${isDarkMode ? 'text-black':'text-white'}  text-md font-medium hover:underline"
               >
                 HOME
               </a>
@@ -23,7 +24,7 @@ const AdminNavbar = () => {
             <li>
               <a
                 href="/AllWorks"
-                className="text-white text-md font-medium hover:underline"
+                className="{`${isDarkMode ? 'text-black':'text-white'}  text-md font-medium hover:underline"
               >
                 All Works
               </a>
@@ -31,20 +32,22 @@ const AdminNavbar = () => {
             <li>
               <a
                 href="/Aboutme"
-                className="text-white text-md font-medium hover:underline"
+                className="{`${isDarkMode ? 'text-black':'text-white'} e text-md font-medium hover:underline"
               >
                 About Me
               </a>
             </li>
           </ul>
-          <img
-            onClick={() => {
-              setIsVisible(true);
-            }}
-            src={listicon}
-            className="w-9 sm:hidden absolute right-5 top-5 "
-            alt=""
-          />
+          <button
+  onClick={() => {
+    setIsVisible(true);
+  }}
+  className="sm:hidden absolute right-5 top-5"
+  aria-label="Open Menu"
+>
+  <FaBars
+  />
+</button>
         </div>
 
         <div

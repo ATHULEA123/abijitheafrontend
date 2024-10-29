@@ -4,11 +4,11 @@ import insta from "../../assets/insta.png";
 import utube from "../../assets/utube.png";
 import email from "../../assets/email.png";
 import "./footer.css"
-const Footer = () => {
+const Footer = ({isDarkMode}) => {
   return (
     <div className="flex flex-col justify-center items-center my-5 md:my-0 lg:my-6 ">
-  <h3 className="text-xl font-light mb-3 text-white">LET'S CONNECT</h3>
-  <p className="text-sm font-light mb-3 text-white text-center px-4">
+  <h3 className={`text-xl font-light mb-3 ${isDarkMode ? 'text-black':'text-white'}  `}>LET'S CONNECT</h3>
+  <p className={`text-sm font-light mb-3 ${isDarkMode ? 'text-black':'text-white'}  text-center px-4`}>
     I'm always open to artworks, collaboration, commissions or just a chat
     about art!
   </p>

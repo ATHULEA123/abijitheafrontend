@@ -5,7 +5,7 @@ import ConfirmationModal from "../AdminPanel/ConfirmationModal ";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 
-const AllWork = () => {
+const AllWork = ({isDarkMode}) => {
   const [artworks, setArtworks] = useState([]);
   const [dropdownOpen, setDropdownOpen] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
@@ -64,10 +64,13 @@ const AllWork = () => {
     setDropdownOpen(dropdownOpen === id ? null : id);
   };
 
+ 
   const filteredArtworks =
-    filter === "all"
-      ? artworks
-      : artworks.filter((artwork) => artwork.arttype === filter);
+  filter === "all"
+    ? artworks
+    : artworks.filter((artwork) =>
+        artwork.arttype.trim().toLowerCase() === filter.trim().toLowerCase()
+      );
 
   return (
     <>
@@ -90,7 +93,7 @@ const AllWork = () => {
       </div>
 
         <div className="flex items-center justify-end w-full">
-          <button className="mt-6 py-2 px-4 border border-white rounded-full text-white flex items-center justify-center hover:bg-white hover:text-black transition-colors">
+          <button className="mt-6 py-2 px-4 border {`${isDarkMode ? 'border-black':'border-white'}  rounded-full {`${isDarkMode ? 'text-black':'text-white'} flex items-center justify-center hover:bg-white hover:text-black transition-colors">
             <a href="/AddWork">Add Work</a>
 
             <img src={rightarrowwhite} alt="Right arrow" className="w-6" />
@@ -108,8 +111,8 @@ const AllWork = () => {
                 alt={artwork.artname}
               />
               <div className="text-content">
-                <p className="text-white py-2">{artwork.artname}</p>
-                <p className="text-white">{artwork.arttype}</p>
+                <p className="{`${isDarkMode ? 'text-black':'text-white'}  py-2">{artwork.artname}</p>
+                <p className="{`${isDarkMode ? 'text-black':'text-white'} ">{artwork.arttype}</p>
               </div>
 
               <div className="absolute top-2 right-0">
@@ -124,7 +127,7 @@ const AllWork = () => {
                     />
                   </button>
                   {dropdownOpen === artwork._id && (
-                    <ul className="dropdown-menu absolute right-0 rounded-md shadow-lg text-white flex flex-col bg-white p-2">
+                    <ul className="dropdown-menu absolute right-0 rounded-md shadow-lg {`${isDarkMode ? 'text-black':'text-white'}  flex flex-col bg-white p-2">
                       <li>
                         <button
                           onClick={() => handleDelete(artwork._id)}

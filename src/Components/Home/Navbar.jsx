@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import listicon from "../../assets/listicon.png";
 import returnarrow from "../../assets/returnarrow.png";
-
-const Navbar = () => {
+import { FaBars } from 'react-icons/fa';
+const Navbar = ({isDarkMode}) => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
     <div className="flex justify-between items-center py-6 px-8">
       <div className="flex items-center gap-4">
-        <h1 className="text-xl font-bold text-white">ABIJITH EA</h1>
+        <h1 className={`text-xl font-bold${isDarkMode ? 'text-black':'text-white'  }`}>ABIJITH EA</h1>
       </div>
       <div className="flex">
         <ul className=" hidden md:flex gap-6">
           <li>
             <a
               href="/"
-              className="text-white text-md font-medium hover:underline"
+              className="${isDarkMode ? 'text-black':'text-white'  } text-md font-medium hover:underline"
             >
               HOME
             </a>
@@ -23,7 +23,7 @@ const Navbar = () => {
           <li>
             <a
               href="/Collections"
-              className="text-white text-md font-medium hover:underline"
+              className="${isDarkMode ? 'text-black':'text-white'  } text-md font-medium hover:underline"
             >
               WORKS
             </a>
@@ -31,7 +31,7 @@ const Navbar = () => {
           <li>
             <a
               href="/about"
-              className="text-white text-md font-medium hover:underline"
+              className="${isDarkMode ? 'text-black':'text-white'  } text-md font-medium hover:underline"
             >
               ABOUT
             </a>
@@ -39,20 +39,22 @@ const Navbar = () => {
           <li>
             <a
               href="/contact"
-              className="text-white text-md font-medium hover:underline"
+              className="${isDarkMode ? 'text-black':'text-white' } text-md font-medium hover:underline"
             >
               GET IN TOUCH
             </a>
           </li>
         </ul>
-        <img
-          onClick={() => {
-            setIsVisible(true);
-          }}
-          src={listicon}
-          className="w-9 sm:hidden absolute right-5 top-5 "
-          alt=""
-        />
+        <button
+  onClick={() => {
+    setIsVisible(true);
+  }}
+  className="sm:hidden absolute right-5 top-5"
+  aria-label="Open Menu"
+>
+  <FaBars
+  />
+</button>
       </div>
       <div
         className={`fixed h-full bottom-0 right-0 top-0 overflow-hidden bg-white  transition-all duration-700 ease-in-out  z-40 ${
